@@ -56,8 +56,7 @@ def skip_j_state(matrix, matrix_pr):
                 if m != j:
                     s += matrix[i, m] * matrix_pr[m, j]
             new_matrix[i, j] = s
-    matrix_pr = new_matrix
-    return matrix_pr
+    return new_matrix
 
 
 def task4(matrix, k):
@@ -83,7 +82,7 @@ def task5(matrix):
         matrix (numpy.ndarray): матрица переходов
     """
     matrix_pr, result = np.copy(matrix), np.copy(matrix)
-    for g in range(1, 700):
+    for g in range(1, 1500):
         matrix_pr = skip_j_state(matrix, matrix_pr)
         result += g * matrix_pr
     return result
@@ -165,11 +164,11 @@ def task9(matrix):
 
 matrix = np.array([
     [0.05, 0.06, 0, 0, 0.3, 0.2, 0.39, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0.55, 0, 0, 0.45, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0.39, 0, 0, 0.45, 0, 0.16, 0, 0, 0, 0, 0, 0, 0],
     [0, 0.49, 0.14, 0.37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0.35, 0.39, 0.24, 0, 0.02, 0, 0, 0, 0, 0, 0, 0],
     [0.01, 0, 0.12, 0.17, 0.04, 0.09, 0, 0.14, 0.19, 0.08, 0.16, 0, 0, 0],
-    [0, 0.12, 0, 0, 0, 0.35, 0, 0.39, 0.14, 0, 0, 0, 0, 0],
+    [0, 0.12, 0, 0, 0, 0.06, 0, 0.39, 0.14, 0, 0.29, 0, 0, 0],
     [0, 0.52, 0.42, 0, 0, 0, 0.06, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0.26, 0, 0.08, 0.66, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0.23, 0, 0.28, 0.22, 0, 0, 0.27, 0, 0],
