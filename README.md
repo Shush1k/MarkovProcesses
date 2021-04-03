@@ -83,7 +83,7 @@ def task5(matrix):
         matrix (numpy.ndarray): матрица переходов
     """
     matrix_pr, result = np.copy(matrix), np.copy(matrix)
-    for g in range(1, 1500):
+    for g in range(1500):
         matrix_pr = skip_j_state(matrix, matrix_pr)
         result += g * matrix_pr
     return result
@@ -273,7 +273,7 @@ print(f"Среднее количество шагов для перехода �
 ```
 
     Среднее количество шагов для перехода из состояния 8 в состояние 10 
-    --> 36.97986395057343
+    --> 35.9798639505735
 
 
 #### Задание 6
